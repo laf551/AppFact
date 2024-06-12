@@ -1,0 +1,129 @@
+﻿<Page x:Class="AppFacturation.Inscription"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:AppFacturation"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Sign up">
+    <Page.Resources>
+        
+    </Page.Resources>
+
+    <Grid Background="#D6CBD7" >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height=" *"/>
+        </Grid.RowDefinitions>
+        <!-- row:0 sign up  -->
+        <StackPanel VerticalAlignment="Center">
+            
+            <Label Content =" Create your account" FontSize="30" HorizontalAlignment="Center"
+                    FontWeight="Bold" Foreground="#BA68C8" FontFamily="Arial"/>
+
+        </StackPanel>
+        
+        <!-- User name  -->
+        <Border Grid.Row="1" 
+            Style="{StaticResource HoverBorderTxtStyle}" >
+            <StackPanel VerticalAlignment="Center" Orientation="Horizontal" Margin="19,0,0,0" >
+
+                <TextBlock FontFamily="{StaticResource IconFont}"
+                Foreground="#BA68C8" 
+                VerticalAlignment="Center" FontSize="28"  Width="31">person</TextBlock>
+
+                <TextBox  VerticalAlignment="Center" BorderThickness="0" 
+                     Margin="15,0,15,0"
+                     Text="Enter your name"  Width="400" FontSize="20"
+                     Background="white"
+                    Foreground="DarkGray" HorizontalAlignment="Center"
+                    GotFocus="TextBox_GotFocus" 
+                    x:Name="obtenirName"
+                     
+                />
+            </StackPanel>
+          
+        </Border>
+        <!-- User mail  -->
+        <Border Grid.Row="2" 
+            Style="{StaticResource HoverBorderTxtStyle}">
+            <StackPanel VerticalAlignment="Center" Orientation="Horizontal" Margin="19,0,0,0" >
+
+                <TextBlock FontFamily="{StaticResource IconFont}"
+                    Foreground="#BA68C8" 
+                    VerticalAlignment="Center" FontSize="28"  Width="31">mail</TextBlock>
+
+                <TextBox  VerticalAlignment="Center" BorderThickness="0" 
+                     Text="Enter your email"  Width="400" FontSize="20"
+                     Margin="15,0,15,0"
+                     Background="white"
+                     Foreground="DarkGray" HorizontalAlignment="Center"
+                     GotFocus= "TextBox_GotFocus" 
+                     x:Name="obtenirMail"
+                />
+            </StackPanel>
+
+        </Border>
+        
+        <!-- User password -->
+        <Border Grid.Row="3" 
+            Style="{StaticResource HoverBorderTxtStyle}">
+            <StackPanel VerticalAlignment="Center" Orientation="Horizontal" Margin="19,0,0,0" >
+
+                <TextBlock FontFamily="{StaticResource IconFont}"
+                    Foreground="#BA68C8" 
+                    VerticalAlignment="Center" FontSize="28"  Width="31" >lock</TextBlock>
+
+                <TextBox  VerticalAlignment="Center" BorderThickness="0" 
+                     Text="Enter your password"  Width="400" FontSize="20"
+                     BorderBrush="{x:Null}"
+                     Background="white"
+                     Margin="15,0,15,0"
+                     Foreground="DarkGray" HorizontalAlignment="Center"
+                     GotFocus="TextBox_GotFocus" x:Name="obtenirPass"/>
+            </StackPanel>
+
+        </Border>
+        <StackPanel Grid.Row="4" Orientation="Vertical"  VerticalAlignment="Center" 
+            HorizontalAlignment="Center"  >
+            <!--stlyle button-->
+            <Button Style="{DynamicResource RoundedButtonStyle}" Grid.Row="3" Content="SIGN UP "
+                    Background="#BA68C8" Foreground="White"
+                    Width="200" Height="35"
+                    Margin="-20,10,0,0" Click="AddUser" />
+            <Label Content="Already have an account? " />
+            <Button Content="Sign In" BorderThickness="0" Background="#D6CBD7" 
+            Foreground="#BA68C8" FontSize="15" Click="Button_signIn" ></Button>
+            <Button Content="afficher test" BorderThickness="0" Background="#D6CBD7" 
+Foreground="#BA68C8" FontSize="15" Click="affciherTest" ></Button>
+
+            
+            
+        </StackPanel>
+        <StackPanel Grid.Row="5" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <!--show list -->
+
+
+            
+            <!--<ListView x:Name="usersListBox" > -->
+            <ListView  x:Name="usersListBox" ItemsSource="{Binding myfirstList}"> 
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Width="200" Header="Name User" DisplayMemberBinding="{Binding Path=Name}" />
+                        <GridViewColumn Width="200" Header="Email User" DisplayMemberBinding="{Binding Path=Email}" />
+                        <GridViewColumn Width="200" Header="Password User" DisplayMemberBinding="{Binding Path=Password}"/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+
+        </StackPanel>
+
+       
+
+    </Grid>
+</Page>
