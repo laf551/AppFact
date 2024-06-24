@@ -7,9 +7,9 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="Inscription.xaml.cs">
+    <Page Update="Inscription.xaml.cs">
       <SubType>Code</SubType>
-    </Compile>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Page Update="MainWindow.xaml">

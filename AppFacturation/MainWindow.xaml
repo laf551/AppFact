@@ -8,7 +8,8 @@
         Title="AppFacturation" Height="400" Width="600" 
         WindowStartupLocation="CenterScreen"
         Icon="\assets\icon2.png">
-      
+    
+    
     <Grid Background="#D6CBD7">
         <Grid.RowDefinitions>
             <RowDefinition Height="100"/>

@@ -9,6 +9,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Inscription.xaml.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="assets\icon1.png" />
     <None Remove="assets\icon2.png" />
     <None Remove="assets\icons8-le-reçu-48.png" />
@@ -22,6 +26,10 @@
 
   <ItemGroup>
     <PackageReference Include="MySql.Data" Version="8.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Include="Inscription.xaml.cs" />
   </ItemGroup>
 
   <ItemGroup>

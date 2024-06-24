@@ -8,7 +8,7 @@ using System.Windows.Controls;
 
 namespace AppFacturation
 {
-    class User
+    public class User
     {
        
        
@@ -16,15 +16,16 @@ namespace AppFacturation
        public string? Email {  get; set; }
        public string? Password { get; set; }
 
-        public User(string name, string mail , string pass ) { 
+        /*public User(string name, string mail , string pass ) { 
             Name= name;
             Email= mail;
             Password= pass; 
-        }
-        /*public string Affichage()
+        }*/
+
+        public string Affichage()
         {
             return $"{Name}, {Email} ,{Password}";
-        }*/
+        }
 
     }
 }

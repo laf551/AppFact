@@ -25,11 +25,17 @@ namespace AppFacturation
 
     public partial class Inscription : Page
     {
-        public Inscription()
+        public DataConnect dt ; 
+       
+
+		public Inscription()
         {
+
             InitializeComponent();
+            
         }
-        private void TextBox_GotFocus(object sender, RoutedEventArgs e)
+		
+		private void TextBox_GotFocus(object sender, RoutedEventArgs e)
         {
             TextBox textBox = (TextBox)sender;
             // password202000"
@@ -55,119 +61,23 @@ namespace AppFacturation
             firstpage.Show();
 
         }
-        public void AddUser(object sender, RoutedEventArgs e)
+        private void AddUser(object sender, RoutedEventArgs e)
         {
-            string inputmail = obtenirMail.Text;
-            string inputname = obtenirName.Text;
-            string inputpass = obtenirPass.Text;
-
-            //DataConnect myConnexion = new DataConnect();
-            // myConnexion.Insert(inputname, inputmail, inputpass);
-
-
-
-
-
-           
-
-
-
-            /* using (MySqlConnection conn = new MySqlConnection(connectData))
-             {
-                 conn.Open();
-                 string Insertquery = "INSERT INTO `user`( `NameUser`, `EmailUser`, `PasswordUser`) " +
-                     "VALUES (@name,@mail,@password)";
-                 using (MySqlCommand cmd = new MySqlCommand(Insertquery, conn))
-                 {
-                     cmd.Parameters.AddWithValue("@name", inputname);
-                     cmd.Parameters.AddWithValue("@mail", inputmail);
-                     cmd.Parameters.AddWithValue("@password", inputpass);
-
-                     cmd.ExecuteNonQuery();
-                 }
-
-             }*/
-
-
-
-
-
-
-           
-
-            /*foreach (var user in myfirstList)
-            {
-               // afficher.ItemsSource = user.Name;
-                Console.WriteLine(user);
-            }*/
-
-
-
-            /* foreach (User user in listUserData){
-                                     = user.Email;
-                                     = user.Name;
-                                     = user.Password;
-
-             }*/
-
-            List<User> myfirstList = new List<User>
-            {
-               new User(inputname, inputmail, inputpass)
-            };
-
-           // MessageBox.Show($"Bonjour {myfirstList}");
-            
-
-
-
-
-
-            ListView UserLV = new ListView();
-            UserLV.Items.Add(myfirstList);
-            usersListBox.ItemsSource = myfirstList;
-
-           
-
+            Console.WriteLine("hey"); 
         }
-        public void affciherTest(object sender, RoutedEventArgs e)
+        private void Button_display(object sender, RoutedEventArgs e)
         {
-            List<User> Contacts = new List<User>(); 
-            
-            Contacts.Add(new User("John", "Doe", "Contoso"));
-            Contacts.Add(new User("Jane", "Doe", "Fabrikam"));
-            Contacts.Add(new User("Santa", "Claus", "Alpine Ski House"));
+			dt = new DataConnect();
+            List<User> collectUser =  dt.Display();
 
-            
-            ListView ContactsLV = new ListView();
-            ContactsLV.ItemsSource = Contacts;
-
-           
+		    usersListBox.ItemsSource = collectUser;
+			
 
 
 
 
-        }
-        //myfirstList
+		}
+        
 
-        /*var inputList = new List<User> { 
-           new User{Name = obtenir.Text , 
-           Email = obtenir.Text , 
-           Id = obtenir.Text,
-           Password = obtenir.Text
-           }*/
-            //}
-            /*LbxUtilisateurs.ItemsSource = new List<Utilisateur> {
-                new Utilisateur { Nom = "Max"}, new Utilisateur {Nom ="Marie" }*/
-            //};
-
-            // Afficher le texte dans le TextBlock
-            //obtenir.Text = inputText;
-
-
-
-            
-
-
-
-        }
     }
+}  

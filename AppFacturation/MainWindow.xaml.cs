@@ -20,10 +20,7 @@ namespace AppFacturation
         {
             InitializeComponent();
            
-           /*
-            LbxUtilisateurs.ItemsSource = new List<Utilisateur> {
-                new Utilisateur { Nom = "Max"}, new Utilisateur {Nom ="Marie" }
-            };*/
+           
             
         }
 
